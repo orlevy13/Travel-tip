@@ -15,7 +15,7 @@
         <div class="location-settings">
             <input class="goto-location" placeholder="Maldives" name="gotoLocation" type="text">
             <button class="go-btn">Go</button>
-            <button class="location-btn">My Location</button>
+            <button class="my-location-btn">My Location</button>
         </div>
         <div class="map-container"></div>
         <div class="curr-location-section flex space-between">
@@ -46,8 +46,8 @@
 </main>
 
 <body>
-    <script src="js/travel-service.js"></script>
-    <script src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7wFxeGayDFtxLfft53sDr7sMu9cj7Vio&callback=initMap"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
