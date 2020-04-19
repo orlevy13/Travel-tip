@@ -1,30 +1,31 @@
-export const mapService  = {
+var gMap;
+export const mapService = {
     initMap,
     getLoctionUser,
+    // gMap
 }
 
-function initMap(elMap , pos={ lat: 29.550360, lng: 34.952278 }){
+function initMap(elMap, pos = { lat: 29.550360, lng: 34.952278 }) {
 
-    var map = new google.maps.Map(elMap, {
+    gMap = new google.maps.Map(elMap, {
         center: pos,
         zoom: 8
     });
 
     var marker = new google.maps.Marker({
-        position: map.center,
-        map: map,
+        position: gMap.center,
+        map: gMap,
     });
-
 }
 
 function getLoctionUser(elMap) {
-   
+
     navigator.geolocation.getCurrentPosition(function (position) {
         var pos = {
-            lat : position.coords.latitude,
-            lng : position.coords.longitude,
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
         }
-        initMap(elMap , pos);
+        initMap(elMap, pos);
     });
 }
 
