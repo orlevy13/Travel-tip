@@ -6,6 +6,7 @@ class Location {
         this.id = utils.makeId();
         this.name = name;
         this.pos = pos;
+        this.weather = null;
         this.marker = new google.maps.Marker({
             position: pos,
             map: mapService.gMap,
@@ -18,6 +19,16 @@ class Location {
     setName(name) {//this is only neccessary thanks to the name validation(?)
         if (!name) return;
         this.name = name;
+    }
+    getRowHTML() {
+        return `<tr>
+        <td>${this.id}</td>
+        <td>${this.name}</td>
+        <td>HOT</td>
+        <td><button>Delete</button>
+            <button>Update</button>
+        </td>
+        </tr>`;
     }
 }
 export const locationPreview = { Location }

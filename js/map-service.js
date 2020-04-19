@@ -2,7 +2,7 @@ var gMap;
 export const mapService = {
     initMap,
     getLoctionUser,
-    // gMap
+    gMap,
 }
 
 function initMap(elMap, pos = { lat: 29.550360, lng: 34.952278 }) {
@@ -28,4 +28,3 @@ function getLoctionUser(elMap) {
         initMap(elMap, pos);
     });
 }
-
