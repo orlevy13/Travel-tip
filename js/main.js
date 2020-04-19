@@ -33,10 +33,12 @@ function bindEvents() {
 function renderLocation(locationData){
     renderTable(locationData.strHTMLs);
     mapService.initMap(EL_MAP ,locationData.position);
+    document.querySelector('.curr-location-data').innerText = 'Location: ' + locationData.address;
 }
 
 
 function renderTable(strHTML) {
     document.querySelector('.locations-table').innerHTML = strHTML
 }
+
 

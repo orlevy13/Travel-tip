@@ -18,7 +18,8 @@ function getAddressData(addressInput) {
         .then(() => {
             return {
                 strHTMLs: gLocations.map(loc => loc.getRowHTML()).join(''),
-                position: gLocations[gLocations.length - 1].pos
+                position: gLocations[gLocations.length - 1].pos,
+                address: gLocations[gLocations.length - 1].name
             };
         })
 }
