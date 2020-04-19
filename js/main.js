@@ -24,11 +24,19 @@ function bindEvents() {
     document.querySelector('.go-btn').
         addEventListener('click', () => {
             travelService.getAddressData(EL_INPUT_ADDRESS.value)
-                .then(strHTML => renderTable(strHTML))
+                .then(locationInfo => renderLocation(locationInfo))
         });
 
 }
 
+
+function renderLocation(locationData){
+    renderTable(locationData.strHTMLs);
+    mapService.initMap(EL_MAP ,locationData.position);
+}
+
+
 function renderTable(strHTML) {
     document.querySelector('.locations-table').innerHTML = strHTML
 }
+
