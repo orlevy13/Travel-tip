@@ -1,6 +1,7 @@
 export const mapService  = {
     initMap,
     getLoctionUser,
+    getAddressData,
 }
 
 function initMap(elMap , pos={ lat: 29.550360, lng: 34.952278 }){
@@ -28,3 +29,7 @@ function getLoctionUser(elMap) {
     });
 }
 
+function getAddressData (addressInput) {
+    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${addressInput}&key=AIzaSyC5yiijr1XG8ZhMCf4hH9xw8QQ5rPvcLH8`)
+        .then(res=>console.log(res.data))
+}
